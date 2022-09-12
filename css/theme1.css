@@ -1,0 +1,57 @@
+:root{
+    --main-background:hsl(0, 0%, 90%);
+    --keypad-background: hsl(0, 5%, 81%);
+    --screen-background: hsl(0, 0%, 93%);
+    --key-background: hsl(185, 42%, 37%);
+    --key-shadow: hsl(185, 58%, 25%);
+    --key-background-toggle: hsl(25, 98%, 40%);
+    --key-shadow1:hsl(25, 99%, 27%);
+    --key-background1:hsl(45, 7%, 89%);
+    --key-shadow2:hsl(35, 11%, 61%);
+    --grayish-blue:hsl(60, 10%, 19%);
+}
+body {
+    background-color: var(--main-background);
+}
+
+label, h6 {
+    color: var(--grayish-blue);
+}
+
+.header > h1 {
+    color: var(--grayish-blue);
+}
+
+.input {
+    background-color: var(--key-background);
+}
+input:checked {
+    background-color: var(--key-background-toggle);
+}
+
+.user-input {
+    background-color: white;
+    color: var(--grayish-blue);
+}
+
+.grid-container {
+    background-color: var(--keypad-background);
+}
+
+.grid-container > button {
+    background-color: var(--key-background1);
+    color: var(--grayish-blue);
+    box-shadow: 0 5px var(--key-shadow2);
+}
+
+button:nth-child(17), button:nth-child(4) {
+    background-color: var(--key-background);
+    box-shadow: 0 5px var(--key-shadow);
+    color: var(--key-background1);
+}
+
+button:nth-child(18) {
+    background-color: var(--key-background-toggle);
+    box-shadow: 0 5px var(--key-shadow1);
+    color: white;
+}

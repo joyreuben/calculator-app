@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;  
+    font-family: 'Spartan', sans-serif;  
+    font-size: 32px;
+}
+:root{
+     --main-background:hsl(222, 26%, 31%);
+     --keypad-background: hsl(223, 31%, 20%);
+     --screen-background: hsl(224, 36%, 15%);
+     --key-background: hsl(225, 21%, 49%);
+     --key-shadow: hsl(224, 28%, 35%);
+     --key-background-toggle: hsl(6, 63%, 50%);
+     --key-shadow1:hsl(6, 70%, 34%);
+     --key-background1:hsl(30, 25%, 89%);
+     --key-shadow2:hsl(28, 16%, 65%);
+     --grayish-blue:hsl(221, 14%, 31%);
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-background);
+    height: 100vh;
+}
+.calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin: auto;
+}
+.header {
+    display: flex;
+    margin: 50px 0 10px;
+    position: relative;
+}
+.header > h1 {
+    color: var(--key-background1);
+    position: absolute;
+    left: -90px;
+    top: -15px;
+}
+.header > h6 {
+    align-self: center;
+}
+label, h6 {
+    font-size: 13px;
+    color: var(--key-background1);
+    position: relative;
+    left: 70px;
+}
+.input {
+    height: 30px;
+    width: 80px;
+    border-radius: 30px;
+    background-color: var(--key-background);
+    position: relative;
+    left: 70px;
+}
+#theme1, #theme2, #theme3{
+    appearance: none;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 30px;
+    top: 7px;
+    transition: 0.5s;
+}
+#theme1 { 
+    left: 10px;
+}
+  
+#theme2 {
+    left: 33px;
+} 
+#theme3{
+    left: 55px;
+}
+input:checked {
+    background-color: var(--key-background-toggle);
+} 
+label {
+    top: -40px;
+} 
+label[for="theme1"] {
+    left: 13px;
+}
+label[for="theme2"] {
+    left: 20px;
+} 
+label[for="theme3"] {
+    left: 26px;
+}
+.user-input {
+    background-color: var(--screen-background);
+    height: 80px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-right: 10px;
+    color: white;
+    overflow: hidden;
+}
+.user-input > .previous-operand {
+    font-size: 15px;
+}
+.grid-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 70px);
+    grid-template-rows: repeat(5, 70px);
+    background-color: var(--keypad-background);
+    padding: 15px 10px;
+    border-radius: 10px;
+}
+.grid-container > button {
+    margin: 0 8px;
+    padding: 8px 0;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--key-background1);
+    color: var(--grayish-blue);
+    box-shadow: 0 5px var(--key-shadow2);
+}
+button:active {
+    transform: translateY(2px);
+}
+.column-span {
+    grid-column: span 2;
+}
+button:nth-child(17), button:nth-child(4) {
+    background-color: var(--key-background);
+    box-shadow: 0 5px var(--key-shadow);
+    color: white;
+    font-size: 18px;
+    padding: 17px 0;
+}
+button:nth-child(18) {
+    background-color: var(--key-background-toggle);
+    box-shadow: 0 5px var(--key-shadow1);
+    color: white;
+}
+.attribution {
+    font-size: 11px;
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%);
+    font-size: 11px;
+}
+@media only screen and (min-width: 1200px) {
+    .calculator {
+        width: 450px;
+    }
+    .header > h1 {
+       left: -160px;
+    }
+    label, h6 {
+        left: 135px;
+    }
+    .input {
+        left: 160px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(4, 108px);
+        grid-template-rows: repeat(5, 65px);
+    }
+    
+    .grid-container > button {
+        margin: 0 8px;
+        padding: 5px 0;
+    }
+
+    button:nth-child(17), button:nth-child(4) {
+        padding: 13px 0;
+    }    
+}
