@@ -169,6 +169,7 @@ button:nth-child(18) {
         left: 135px;
     }
     .input {
+        background-color: var(--key-background);
         left: 160px;
     }
 
